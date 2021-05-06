@@ -49,3 +49,15 @@ ul {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
+
+@media screen and (max-width: 400px) {
+    #timer {
+        position: static;
+        margin: 0 50%;
+        padding-top: 150px;
+    }
+    ul {
+        float: none;
+    }
+    
+}

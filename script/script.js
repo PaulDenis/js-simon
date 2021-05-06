@@ -6,11 +6,11 @@ var playerDigits = [];
 do {
     var number = getRandomNum(1, 100);
     if (existInArray(number, numbers) == false) {
-       numbers.push(number);
+       numbers.push(" " + number);
     } 
  } while (numbers.length < 5);
 // console.log(numbers);
-alert("Ricorda questi numeri \n" + numbers)
+alert("Ricorda questi numeri \n" + numbers )
 
 // Da li parte un timer di 30 secondi.
 var countDown = 30;
@@ -53,7 +53,7 @@ setTimeout(function() {
         document.getElementById("player_digits").innerHTML += "<li>" + playerDigits[i] + "</li>"
     }
 
-    document.getElementById("corrects").innerHTML = "Hai indovinato " + correctAmmount + " numer* \n " + correctNumbers;
+    document.getElementById("corrects").innerHTML = "Ti sei ricordato " + correctAmmount + " numer* \n " + correctNumbers;
 
 }, 31000);
 
