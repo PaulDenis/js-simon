@@ -24,7 +24,7 @@ var clock = setInterval(function () {
 }, 1000);
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 var correctAmmount = 0;
-var correctNumber = [];
+var correctNumbers = [];
 setTimeout(function() {
     do {
         do {
@@ -37,15 +37,21 @@ setTimeout(function() {
     console.log(playerDigits);
     // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
     
-    for (i=0; i < numbers.length; i++) {
+    for (var i=0; i < numbers.length; i++) {
         for (y = 0; y < numbers.length; y++) {
             if (playerDigits[i] == numbers[y]) {
-                correctNumber.push(playerDigits[i]);
+                correctNumbers.push(playerDigits[i]);
                 correctAmmount++;
             }
         }
     }
-    console.log(correctNumber, correctAmmount);
+
+    for (var i=0; i < numbers.length; i++) {
+        document.getElementById("numbers").innerHTML += "<li>" + numbers[i] + "</li>"
+        document.getElementById("player_digits").innerHTML += "<li>" + playerDigits[i] + "</li>"
+    }
+
+    document.getElementById("corrects").innerHTML = "Hai indovinato " + correctAmmount + " numer* \n " + correctNumbers;
 
 }, 31000);
 

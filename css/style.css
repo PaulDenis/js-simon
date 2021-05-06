@@ -1,14 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     text-align: center;
-    background-color: aquamarine;   
+    background-image: url("../img/memory_background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
 #timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 200px;
     height: 200px;
     line-height: 200px;
     display: inline-block;
     font-size: 140px;
     border-radius: 50%;
-    background-color: blue;
+}
+
+ul {
+    margin: 50px 15%;
+    list-style: none;
+    float: left;
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+#corrects {
+    float: left;
+    margin-top: 150px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
 }
