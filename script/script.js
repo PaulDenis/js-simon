@@ -8,7 +8,7 @@ do {
        numbers.push(number);
     } 
  } while (numbers.length < 5);
-//  console.log(numbers);
+console.log(numbers);
 alert("Ricorda questi numeri \n" + numbers)
 
 // Da li parte un timer di 30 secondi.
@@ -23,7 +23,30 @@ var clock = setInterval(function () {
     }
 }, 1000);
 // Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
+var correctAmmount = 0;
+var correctNumber = [];
+setTimeout(function() {
+    do {
+        do {
+            var digit = parseInt(prompt("Inserisci uno alla volta i numeri di prima:"));
+        } while (isNaN(digit) || digit < 0 || digit > 100);
+        if (!existInArray(digit, playerDigits)) {
+            playerDigits.push(digit);
+        }
+    } while (playerDigits.length < 5) ;
+    console.log(playerDigits);
+    // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+    
+    for (i=0; i < numbers.length; i++) {
+        for (y = 0; y < numbers.length; y++) {
+            if (playerDigits[i] == numbers[y]) {
+                correctNumber.push(playerDigits[i]);
+                correctAmmount++;
+            }
+        }
+    }
+    console.log(correctNumber, correctAmmount);
 
+}, 31000);
 
-// Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 
