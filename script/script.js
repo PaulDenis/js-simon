@@ -10,11 +10,13 @@ do {
     } 
  } while (numbers.length < 5);
 // console.log(numbers);
-alert("Ricorda questi numeri \n" + numbers )
 
 // Da li parte un timer di 30 secondi.
 var countDown = 30;
 
+setTimeout (function() {
+    alert("Ricorda questi numeri \n" + numbers );
+}, 1000)
 var clock = setInterval(function () {
   document.getElementById("timer").innerHTML = countDown;
   if (countDown == 0) {
