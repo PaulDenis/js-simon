@@ -14,13 +14,13 @@ do {
 // Da li parte un timer di 30 secondi.
 var countDown = 30;
 
-setTimeout (function() {
-    alert("Ricorda questi numeri \n" + numbers );
-}, 1000)
+alert("Ricorda questi numeri \n" + numbers );
+
+
 var clock = setInterval(function () {
-  document.getElementById("timer").innerHTML = countDown;
-  if (countDown == 0) {
-    clearInterval(clock);
+    document.getElementById("timer").innerHTML = countDown;
+    if (countDown == 0) {
+        clearInterval(clock);
     } else {
         countDown --;
     }
@@ -50,13 +50,17 @@ setTimeout(function() {
         }
     }
 
+    document.getElementById("numbers").innerHTML += "<li>" + "I numeri erano:" + "</li>"
+    document.getElementById("player_digits").innerHTML += "<li>" + "I tuoi numeri:" + "</li>"
+    
     for (var i=0; i < numbers.length; i++) {
         document.getElementById("numbers").innerHTML += "<li>" + numbers[i] + "</li>"
         document.getElementById("player_digits").innerHTML += "<li>" + playerDigits[i] + "</li>"
     }
-
+  
+    
     document.getElementById("corrects").innerHTML = "Ti sei ricordato " + correctAmmount + " numer* \n " + correctNumbers;
 
-}, 31000);
+}, 32000);
 
 
