@@ -28,10 +28,16 @@ body {
 ul {
     margin: 50px 15%;
     list-style: none;
-    float: left;
     font-size: 50px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
+}
+
+#numbers {
+    float: left;
+}
+#player_digits {
+    float: right;
 }
 
 #corrects {
